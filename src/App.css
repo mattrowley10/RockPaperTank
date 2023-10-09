@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Slabo+27px&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.app, html{
+  min-height: 100vh;
+  background-color:#0C120C ;
+}
+.app-header{
+  text-align: center;
+  margin-bottom: .5rem;
+  font-size: 40px;
+  text-decoration: underline;
+  font-family: 'Shadows Into Light';
+  color:#ECEBF3;
+}
+.app-p{
+  text-align: center;
+  font-family: "Shadows Into Light";
+  font-size: 22px;
+  border: 2px solid #ECEBF3;
+  color: #ECEBF3;
+  margin-bottom: 1rem;
+  /* margin: 0 35rem; */
+}
+.home-div{
+  display: flex;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.objects{
+  padding: 12px;
+  margin-left: 5rem;
+  margin-right: 1rem;
+}
+.object-button{
+  cursor: pointer;
+  padding: 1rem;
+  background-color: #C20114;
+  border-radius: 30%;
+  font-family: 'Slabo';
+  font-size: larger;
+  color: #FBFFF1;
+  opacity: .75;
+}
+.object-button.selected{
+  opacity: 1;
+}
+.versus{
+  cursor: pointer;
+  padding: 1rem;
+  background-color: #C20114;
+  border-radius: 30%;
+  font-family: 'Slabo';
+  font-size: larger;
+  color: #FBFFF1;
+  position: relative;
+  justify-content: center;
+  left: 35rem;
+  margin-right: .25rem;
+  opacity: .75;
+}
+.versus.selected{
+  opacity: 1;
+}
+.result{
+  display: flex;
+  justify-content: space-between;
+  color: #ECEBF3;
+  margin: 10rem 2rem;
+}
+.reset-button{
+  top: 0rem;
+  left: 50%;
+  position: relative;
+  
+}
+.object-image{
+  height: 30px;
+  width: 30px;
+}
+.singleplayer{
+  height: 30px;
+  width: 30px;
+}
+.multiplayer{
+  height: 30px;
+  width: 30px;
+}
