@@ -87,22 +87,14 @@ export default function Home() {
         onClick={() => handleModeSelection(true)}
       >
         Single Player
-        <img
-          className="singleplayer"
-          src="/src/Images/singleplayer.png"
-          alt="singleplayer"
-        />
+        <img className="singleplayer" src="/singleplayer.png" />
       </button>
       <button
         className={`versus ${multiplayer ? "selected" : ""}`}
         onClick={() => handleModeSelection(false)}
       >
         MultiPlayer
-        <img
-          className="multiplayer"
-          src="/src/Images/multiplayer.png"
-          alt="multiplayer"
-        />
+        <img className="multiplayer" src="/multiplayer.png" />
       </button>
       <div className="home-div">
         {objects.map((object) => {
