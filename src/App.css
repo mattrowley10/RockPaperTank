@@ -7,7 +7,8 @@
 }
 .app, html{
   min-height: 100vh;
-  background-color:#0C120C ;
+  background-image: url("https://wallpapers.com/images/hd/graphic-background-ypkvciazmrdqm8qd.jpg") ;
+  background-repeat: repeat;
 }
 .app-header{
   text-align: center;
@@ -15,49 +16,53 @@
   font-size: 40px;
   text-decoration: underline;
   font-family: 'Shadows Into Light';
-  color:#ECEBF3;
+  color:#63264A;
 }
 .app-p{
   text-align: center;
-  font-family: "Shadows Into Light";
-  font-size: 22px;
-  border: 2px solid #ECEBF3;
-  color: #ECEBF3;
+  font-family: "Slabo";
+  font-size: 32px;
+  border: 2px solid #63264A;
+  color:#63264A;
   margin-bottom: 1rem;
-  /* margin: 0 35rem; */
+  margin: 0 30rem 1rem 30rem;
+  font-weight:bolder;
 }
 .home-div{
   display: flex;
+
   margin-top: 1rem;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: 1rem 2rem;
 }
 .objects{
-  padding: 12px;
-  margin-left: 5rem;
-  margin-right: 1rem;
+  padding: 24px;
+
 }
 .object-button{
   cursor: pointer;
-  padding: 1rem;
-  background-color: #C20114;
-  border-radius: 30%;
+  padding: 4rem;
+  margin: 1rem 2rem;
+  background-color: #3D0B37;
+  border-radius: 10%;
   font-family: 'Slabo';
-  font-size: larger;
-  color: #FBFFF1;
-  opacity: .75;
+  font-size: 25px;
+  color: #F3F9D2;
+  opacity: .95;
 }
 .object-button.selected{
   opacity: 1;
+  border: 5px solid #C0D684;
 }
 .versus{
   cursor: pointer;
   padding: 1rem;
-  background-color: #C20114;
+  background-color: #3D0B37;
   border-radius: 30%;
   font-family: 'Slabo';
   font-size: larger;
-  color: #FBFFF1;
+  color: #F3F9D2;
   position: relative;
   justify-content: center;
   left: 35rem;
@@ -67,21 +72,36 @@
 .versus.selected{
   opacity: 1;
 }
+
 .result{
   display: flex;
   justify-content: space-between;
   color: #ECEBF3;
+
   margin: 10rem 2rem;
 }
-.reset-button{
-  top: 0rem;
-  left: 50%;
-  position: relative;
-  
+.result-p{
+  font-family:  "Slabo";
+  font-size: 26px;
+  padding: 20px;
+  background-color: #3D0B37;
+  border-radius: 10%;
 }
-.object-image{
+.result-image{
   height: 30px;
   width: 30px;
+}
+.reset-button{
+  top: 12rem;
+  left: 50%;
+  position: relative;
+  background-color: #3D0B37;
+  padding: 1rem;
+  color:#F3F9D2;
+}
+.object-image{
+  height: 50px;
+  width: 50px;
 }
 .singleplayer{
   height: 30px;
@@ -90,4 +110,7 @@
 .multiplayer{
   height: 30px;
   width: 30px;
+}
+.loading{
+  color: #63264A;
 }

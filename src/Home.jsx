@@ -70,7 +70,11 @@ export default function Home() {
   }, [singlePlayer, userChoice, machineChoice, multiplayer, userChoice2]);
 
   const displayText =
-    multiplayer && userChoice
+    singlePlayer && !userChoice
+      ? "Choose your fighter"
+      : !singlePlayer && !multiplayer
+      ? "Choose your mode"
+      : multiplayer && userChoice
       ? "Player 2, choose your fighter"
       : "Player 1, choose your fighter";
 
@@ -103,30 +107,39 @@ export default function Home() {
       <div className="home-div">
         {objects.map((object) => {
           return (
-            <div key={object}>
-              <button
-                className={`object-button ${
-                  (multiplayer && userChoice === object) ||
-                  userChoice2 === object ||
-                  (!multiplayer && userChoice === object)
-                    ? "selected"
-                    : ""
-                }`}
-                onClick={() => handleUserChoice(object)}
-                disabled={multiplayer && userChoice2 !== null}
-              >
-                {object}
-                <img className="object-image" src={objectImages[object]} />
-              </button>
-            </div>
+            (
+              <div key={object}>
+                <button
+                  className={`object-button ${
+                    (multiplayer && userChoice === object) ||
+                    userChoice2 === object ||
+                    (!multiplayer && userChoice === object)
+                      ? "selected"
+                      : ""
+                  }`}
+                  onClick={() => handleUserChoice(object)}
+                  disabled={multiplayer && userChoice2 !== null}
+                >
+                  {object}
+                  <br></br>
+                  <br></br>
+                  <img className="object-image" src={objectImages[object]} />
+                </button>
+              </div>
+            ) || <p className="loading"> Loading...</p>
           );
         })}
-
         {singlePlayer &&
           winner &&
           userChoice &&
           machineChoice &&
-          nav(`/single`, { state: winner, userChoice, machineChoice, objects })}
+          nav(`/single`, {
+            state: winner,
+            userChoice,
+            machineChoice,
+            objects,
+            objectImages,
+          })}
         {multiplayer &&
           winner &&
           userChoice &&
