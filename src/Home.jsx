@@ -81,21 +81,25 @@ export default function Home() {
   return (
     <div className="app">
       <h2 className="app-header">Rock Paper Tank</h2>
+
       <p className="app-p">{displayText}</p>
-      <button
-        className={`versus ${singlePlayer ? "selected" : ""}`}
-        onClick={() => handleModeSelection(true)}
-      >
-        Single Player
-        <img className="singleplayer" src="/singleplayer.png" />
-      </button>
-      <button
-        className={`versus ${multiplayer ? "selected" : ""}`}
-        onClick={() => handleModeSelection(false)}
-      >
-        MultiPlayer
-        <img className="multiplayer" src="/multiplayer.png" />
-      </button>
+      <div className="versus-div">
+        <button
+          className={`versus ${singlePlayer ? "selected" : ""}`}
+          onClick={() => handleModeSelection(true)}
+        >
+          SinglePlayer
+          <img className="singleplayer" src="/singleplayer.png" />
+        </button>
+        <br></br>
+        <button
+          className={`versus ${multiplayer ? "selected" : ""}`}
+          onClick={() => handleModeSelection(false)}
+        >
+          MultiPlayer
+          <img className="multiplayer" src="/multiplayer.png" />
+        </button>
+      </div>
       <div className="home-div">
         {objects.map((object) => {
           return (
@@ -113,7 +117,6 @@ export default function Home() {
                   disabled={multiplayer && userChoice2 !== null}
                 >
                   {object}
-                  <br></br>
                   <br></br>
                   <img className="object-image" src={objectImages[object]} />
                 </button>

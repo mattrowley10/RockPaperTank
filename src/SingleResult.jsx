@@ -1,5 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import objectImages from "./API/images";
+import "./App.css";
 
 export default function SingleResult() {
   const location = useLocation();
@@ -10,21 +11,28 @@ export default function SingleResult() {
     <div className="single">
       <div className="result">
         <p className="result-p">
-          Winner: {winner}{" "}
+          {winner}
+
           <img className="result-image" src={objectImages[winner]} />
         </p>
-        <p className="result-p">Outcome: {location.state.outcome}</p>
+        <p className="result-p">{location.state.outcome}</p>
         <p className="result-p">
-          Loser: {location.state.loser}{" "}
+          {location.state.loser}
+
           <img
             className="result-image"
             src={objectImages[location.state.loser]}
           />
         </p>
       </div>
-      <button className="reset-button" onClick={() => nav("..")}>
-        Reset
-      </button>
+      <div className="winner-div">
+        <p>Winner: {winner}!</p>
+      </div>
+      <div className="reset-div">
+        <button className="reset-button" onClick={() => nav("..")}>
+          Reset
+        </button>
+      </div>
     </div>
   );
 }

@@ -5,10 +5,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+.app, body{
+  margin: 0;
+  padding: 0;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,50,1) 56%, rgba(0,212,255,1) 100%);
+  background-attachment: scroll;
+  background-size: cover;
+  overflow: auto;
+  height: 100%;
+}
 .app, html{
-  min-height: 100vh;
-  background-image: url("https://wallpapers.com/images/hd/graphic-background-ypkvciazmrdqm8qd.jpg") ;
-  background-repeat: repeat;
+  background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,50,1) 56%, rgba(0,212,255,1) 100%);
+background-size: cover;
+background-attachment: scroll;
+overflow: hidden;
+height: 100%;
+
 }
 .app-header{
   text-align: center;
@@ -16,31 +30,35 @@
   font-size: 40px;
   text-decoration: underline;
   font-family: 'Shadows Into Light';
-  color:#63264A;
+  color:#EFF1F3;
 }
 .app-p{
   text-align: center;
   font-family: "Slabo";
   font-size: 32px;
-  border: 2px solid #63264A;
-  color:#63264A;
-  margin-bottom: 1rem;
+  border: 2px solid #EFF1F3;
+  color:#EFF1F3;
   margin: 0 30rem 1rem 30rem;
   font-weight:bolder;
 }
 .home-div{
-  display: flex;
-
+  display: flex; 
+  justify-content: center;
   margin-top: 1rem;
   flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 1rem 2rem;
+  margin: 1rem 8rem;
 }
 .objects{
   padding: 24px;
 
 }
 .object-button{
+  max-width: 50px;
+  max-height:50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
   padding: 4rem;
   margin: 1rem 2rem;
@@ -48,24 +66,29 @@
   border-radius: 10%;
   font-family: 'Slabo';
   font-size: 25px;
-  color: #F3F9D2;
+  color: #EFF1F3;
   opacity: .95;
 }
 .object-button.selected{
   opacity: 1;
-  border: 5px solid #C0D684;
+  border: 5px solid rgba(0,212,255,1);
+}
+.versus-div{
+  display: flex;
+  justify-content: center;
 }
 .versus{
   cursor: pointer;
+  text-align: center;
   padding: 1rem;
   background-color: #3D0B37;
   border-radius: 30%;
   font-family: 'Slabo';
   font-size: larger;
-  color: #F3F9D2;
+  color: #EFF1F3;
   position: relative;
-  justify-content: center;
-  left: 35rem;
+  display: flex;
+  
   margin-right: .25rem;
   opacity: .75;
 }
@@ -76,33 +99,43 @@
 .result{
   display: flex;
   justify-content: space-between;
-  color: #ECEBF3;
-
+  color: #EFF1F3;
   margin: 10rem 2rem;
 }
 .result-p{
   font-family:  "Slabo";
+  
   font-size: 26px;
-  padding: 20px;
+  padding: 40px;
   background-color: #3D0B37;
+  color: #EFF1F3;
   border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 .result-image{
   height: 30px;
   width: 30px;
 }
+.reset-div{
+  display: flex;
+  justify-content: center;
+}
 .reset-button{
+  font-family: 'Slabo';
+  font-size: 20px;
   top: 12rem;
-  left: 50%;
   position: relative;
   background-color: #3D0B37;
   padding: 1rem;
-  color:#F3F9D2;
+  color:#EFF1F3;
 }
 .object-image{
   height: 50px;
   width: 50px;
 }
+
 .singleplayer{
   height: 30px;
   width: 30px;
@@ -111,6 +144,156 @@
   height: 30px;
   width: 30px;
 }
+.winner-div{
+  font-family: 'Slabo';
+  font-size: 24px;
+  color: #EFF1F3;
+  text-align: center;
+  background-color: #3D0B37;
+  padding: 1rem;
+}
 .loading{
   color: #63264A;
+}
+@media(max-width: 1024px){
+  .app-p{
+    margin: 1rem 0rem;
+    text-align: center;
+  }
+  .versus{
+    
+    left: 0rem;
+  }
+  .object-button{
+    padding: 3rem;
+    font-size: 18px;
+  }
+  .object-image{
+    height: 30px;
+    width: 30px;
+  }
+  .home-div{
+    display: grid 1fr 1fr;
+    justify-content: center;
+    margin: 0;
+  }
+  .result-p{
+    margin-right: 10px;
+    font-size: 18px;
+    padding: 1rem;
+    height: 100px;
+    width: 100px;
+  }
+  .reset-button{
+    top: 5rem;
+  }
+  .winner-div{
+    
+    color: #EFF1F3;
+    text-align: center;
+    background-color: #3D0B37;
+    padding: 1rem;
+  }
+}
+@media(max-width: 768px){
+  .app-p{
+    margin: 1rem 0rem;
+    text-align: center;
+  }
+  .versus{
+    
+    left: 0rem;
+  }
+  .object-button{
+    padding: 3rem;
+    font-size: 18px;
+  }
+  .object-image{
+    height: 30px;
+    width: 30px;
+  }
+  .home-div{
+    display: grid 1fr 1fr;
+    justify-content: center;
+    margin: 0;
+  }
+  .result-p{
+    margin-right: 10px;
+    font-size: 18px;
+    padding: 1rem;
+    height: 100px;
+    width: 100px;
+  }
+  .reset-button{
+    top: 5rem;
+  }
+  .winner-div{
+    
+    color: #EFF1F3;
+    text-align: center;
+    background-color: #3D0B37;
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 425px){
+  .app-p{
+    margin: 1rem 0rem;
+    text-align: center;
+  }
+  .versus{
+    
+    left: 5rem;
+  }
+  .object-button{
+    height: 100px;
+    width: 100px;
+    padding: 2.5rem;
+    font-size: 18px;
+  }
+  .object-image{
+    height: 25px;
+    width: 25px;
+  }
+  .home-div{
+    display: grid 1fr 1fr;
+    justify-content: center;
+    margin: 0;
+  }
+  .versus-div{
+    margin-right: 9rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  .result-p{
+    margin-right: 10px;
+    font-size: 18px;
+    padding: 1rem;
+    height: 100px;
+    width: 100px;
+  }
+  .reset-button{
+    left: 43%;
+    top: 5rem;
+  }
+  .winner-div{
+    
+    color: #EFF1F3;
+    text-align: center;
+    background-color: #3D0B37;
+    padding: 1rem;
+  }
+}
+@media(max-width: 320px){
+  .result-p{
+    display: flex;
+    justify-content: center;
+    height: 95px;
+    width: 95px;
+  }
+  .object-button{
+    font-size: 16px;
+    height: 96px;
+    width: 96px;
+    padding: 2.5rem;
+  }
 }

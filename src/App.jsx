@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";

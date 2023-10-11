@@ -5,9 +5,9 @@ export default function MultiResult() {
   const { winner } = location.state;
   return (
     <div className="result">
-      <p>Winner: {winner}</p>
-      <p>Outcome: {location.state.outcome}</p>
-      <p>Loser: {location.state.loser}</p>
+      <p> {winner}</p>
+      <p> {location.state.outcome}</p>
+      <p> {location.state.loser}</p>
     </div>
   );
 }
